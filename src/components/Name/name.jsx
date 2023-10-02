@@ -29,47 +29,42 @@ export const Name = () => {
     dispatch(addContacts({ name, number }));
     setName('');
     setNumber('');
-
-    const handleChange = event => {
-      const { name, value } = event.target;
-
-      switch (name) {
-        case 'name':
-          setName(value);
-          break;
-        case 'number':
-          setNumber(value);
-          break;
-        default:
-          return;
-      }
-    };
-    return (
-      <>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor={nameId}>
-            Name
-            <input
-              type="text"
-              name="name"
-              value={name}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label htmlFor={numberId}>
-            Number
-            <input
-              type="tel"
-              name="number"
-              value={number}
-              onChange={handleChange}
-            />
-          </label>
-
-          <button type="submit">Add contact</button>
-        </form>
-      </>
-    );
   };
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+
+    switch (name) {
+      case 'name':
+        setName(value);
+        break;
+      case 'number':
+        setNumber(value);
+        break;
+      default:
+        return;
+    }
+  };
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor={nameId}>
+          Name
+          <input type="text" name="name" value={name} onChange={handleChange} />
+        </label>
+
+        <label htmlFor={numberId}>
+          Number
+          <input
+            type="tel"
+            name="number"
+            value={number}
+            onChange={handleChange}
+          />
+        </label>
+
+        <button type="submit">Add contact</button>
+      </form>
+    </>
+  );
 };

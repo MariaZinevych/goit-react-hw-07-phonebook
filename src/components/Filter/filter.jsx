@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
+
 import { getFilter } from 'redux/selector';
 
 export const Filter = () => {
-  const value = useSelector(getFilter);
+  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
   const onChange = event => {
@@ -14,9 +15,9 @@ export const Filter = () => {
 
   return (
     <>
-      <label htmlFor="firstName">
+      <label>
         Find contact by name
-        <input name={value} value={value} onChange={onChange} />
+        <input type="text" name={filter} value={filter} onChange={onChange} />
       </label>
     </>
   );
