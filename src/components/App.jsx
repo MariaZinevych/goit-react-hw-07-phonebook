@@ -7,10 +7,8 @@ import { Toaster } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
-// import { getContacts } from 'redux/selector';
 
 export const App = () => {
-  // const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   useEffect(() => {

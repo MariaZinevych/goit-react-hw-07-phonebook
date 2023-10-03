@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
-
 import { getFilter } from 'redux/selector';
 
 export const Filter = () => {
